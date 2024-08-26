@@ -1,2 +1,4 @@
 # BMICalculator
-A Multiplatform app, Android and iOS,  using Kotlin Multiplatform. 
+
+A Kotlin Multiplatform project targeting Android, iOS.
+
