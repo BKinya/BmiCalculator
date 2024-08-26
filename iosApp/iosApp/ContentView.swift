@@ -2,27 +2,49 @@ import SwiftUI
 import Shared
 
 struct ContentView: View {
-    @State private var showContent = false
+
+  
     var body: some View {
         VStack {
-            Button("Click me!") {
-                withAnimation {
-                    showContent = !showContent
-                }
-            }
+                Text("BMI Calculator")
+                    .foregroundColor(.white)
+                    .font(.title)
+                    .bold()
+                   
 
-            if showContent {
-                VStack(spacing: 16) {
-                    Image(systemName: "swift")
-                        .font(.system(size: 200))
-                        .foregroundColor(.accentColor)
-                    Text("SwiftUI: \(Greeting().greet())")
+
+            HStack{
+                GenderComponent(label: "Male", imageId: "male")
+                    
+                GenderComponent(backgroundColor: darkBlue10,
+                                foregroundColor: smokeWhite50,
+                                secondaryForegroundColor: smokeWhite50,
+                                label: "Female", imageId: "female"
+                                )
                 }
-                .transition(.move(edge: .top).combined(with: .opacity))
-            }
+            .frame(maxWidth: .infinity, alignment: .center)
+            
+            HeightComponent()
+            
+            HStack{
+                WeightAgeComponent(
+                label: "Weight")
+                WeightAgeComponent(
+                label: "Age")
+            }.frame(maxWidth: .infinity, alignment: .center)
+
+            Spacer()
+            ButtonComponent(backgroundColor: .pink, buttonText: "Calculate", clickAction: {
+                print("My first reusable components")
+            }).padding(.bottom, 7)
+            
+            
+
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        .padding()
+        .background(darkNavy)
+
+
     }
 }
 
