@@ -3,22 +3,42 @@ import Shared
 
 struct CalculatorView: View {
 
+    /**
+     TODO:
+    1. Make sex boxes clickable and capture the value ✅
+     2. Hoisting the value of height and capturing it here
+     3. Updating the value of height and weight and capturing it here
+     4. Clicking calculate button should call the shared logic
+     5. When you get the result show in the result view
+     6. Animate showing the result view
+     */
+    @State var isMaleSelected: Bool = true
+    @State var isFemaleSelected: Bool = false
   
     var body: some View {
         VStack {
             TitleComponent()
-                   
-
 
             HStack{
-                SexComponent(label: "Male", imageId: "male")
+                SexComponent(
+                    isSelected: isMaleSelected,
+                    tapAction: {
+                        isMaleSelected = !isMaleSelected
+                        isFemaleSelected = !isFemaleSelected
+                        
+                    }
+                )
                     
-                SexComponent(backgroundColor: darkBlue10,
-                                foregroundColor: smokeWhite50,
-                                secondaryForegroundColor: smokeWhite50,
-                                label: "Female", imageId: "female"
-                                )
+                SexComponent(
+                    isSelected: isFemaleSelected,
+                    label: "Female",
+                    imageId: "female",
+                    tapAction:{
+                        isMaleSelected = !isMaleSelected
+                        isFemaleSelected = !isFemaleSelected
                 }
+            )
+        }
             .frame(maxWidth: .infinity, alignment: .center)
             
             HeightComponent()
@@ -34,8 +54,6 @@ struct CalculatorView: View {
             ButtonComponent(backgroundColor: .pink, buttonText: "Calculate", clickAction: {
                 print("My first reusable components")
             }).padding(.bottom, 7)
-            
-            
 
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
