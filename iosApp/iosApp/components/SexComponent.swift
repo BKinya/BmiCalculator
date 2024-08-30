@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct GenderComponent: View{ // TODO: Rename this to some acceotable name
+struct SexComponent: View{ 
     var backgroundColor: Color = darkBlue40
     var foregroundColor: Color = .white
     var secondaryForegroundColor = smokeWhite

@@ -1,22 +1,19 @@
 import SwiftUI
 import Shared
 
-struct ContentView: View {
+struct CalculatorView: View {
 
   
     var body: some View {
         VStack {
-                Text("BMI Calculator")
-                    .foregroundColor(.white)
-                    .font(.title)
-                    .bold()
+            TitleComponent()
                    
 
 
             HStack{
-                GenderComponent(label: "Male", imageId: "male")
+                SexComponent(label: "Male", imageId: "male")
                     
-                GenderComponent(backgroundColor: darkBlue10,
+                SexComponent(backgroundColor: darkBlue10,
                                 foregroundColor: smokeWhite50,
                                 secondaryForegroundColor: smokeWhite50,
                                 label: "Female", imageId: "female"
@@ -50,6 +47,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        CalculatorView()
     }
 }

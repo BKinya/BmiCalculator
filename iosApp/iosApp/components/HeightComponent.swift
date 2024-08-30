@@ -36,7 +36,8 @@ struct HeightComponent: View{
 
             .padding(.bottom, -1)
             Slider(
-                value: $height,
+                value: $height, // is it possible to extract this to a function? Will find out later
+                // and the whole UDF stuff. 
                 in: 53...290
              )
             .accentColor(sliderColor)
