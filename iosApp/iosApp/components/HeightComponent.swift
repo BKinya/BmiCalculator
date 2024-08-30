@@ -10,7 +10,8 @@ struct HeightComponent: View{
    create a height variable and provide a call back to update the height
    */
     
-    @State private var height = 54.6
+    var height: Float
+    var onHeightChanged : (Float) -> Void
     
     var body: some View{
         BoxComponent(backgrounColor: backgrounColor, 
@@ -36,10 +37,14 @@ struct HeightComponent: View{
 
             .padding(.bottom, -1)
             Slider(
-                value: $height, // is it possible to extract this to a function? Will find out later
-                // and the whole UDF stuff. 
+                value: Binding(
+                    get: {height},
+                    set: {newValue in
+                        onHeightChanged(newValue)
+                    }
+             ),
                 in: 53...290
-             )
+            )
             .accentColor(sliderColor)
             .padding(.bottom, 12)
             .padding(.horizontal, 8)

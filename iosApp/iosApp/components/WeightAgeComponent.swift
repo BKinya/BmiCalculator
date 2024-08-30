@@ -6,8 +6,8 @@ struct WeightAgeComponent : View{
     let secondaryForegoundColor: Color = smokeWhite
     
     var label: String
-     var value: Int = 0
-    var onValueChanged : ( (Int) -> Void)? // TODO: Make this non nullable
+    var value: Int
+    var onValueChanged :  (Int) -> Void
    
    
     
@@ -27,7 +27,7 @@ struct WeightAgeComponent : View{
             
             HStack{
                 Button(action: {
-                    onValueChanged?(value + 1)
+                    onValueChanged(value + 5)
                 }){
                    Circle()
                         .fill(darkBlue70)
@@ -42,7 +42,7 @@ struct WeightAgeComponent : View{
                 Spacer().frame(width: 32)
                 
                 Button(action: {
-                    onValueChanged?(value - 1)
+                    onValueChanged(value - 1)
                 }){
                     Circle()
                          .fill(darkBlue70)

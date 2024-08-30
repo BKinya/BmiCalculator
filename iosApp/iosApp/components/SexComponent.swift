@@ -38,7 +38,6 @@ struct SexComponent: View{
                 .onTapGesture {
                     tapAction()
                 }
-            
                
         ) 
         

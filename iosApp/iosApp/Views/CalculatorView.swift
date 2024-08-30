@@ -5,15 +5,18 @@ struct CalculatorView: View {
 
     /**
      TODO:
-    1. Make sex boxes clickable and capture the value ✅
-     2. Hoisting the value of height and capturing it here
-     3. Updating the value of height and weight and capturing it here
      4. Clicking calculate button should call the shared logic
      5. When you get the result show in the result view
      6. Animate showing the result view
      */
     @State var isMaleSelected: Bool = true
     @State var isFemaleSelected: Bool = false
+    
+    @State var height: Float = 53.0
+    @State var weight: Int = 0
+    @State var age: Int = 0
+    
+    @State var showResultScreen: Bool = false
   
     var body: some View {
         VStack {
@@ -38,22 +41,37 @@ struct CalculatorView: View {
                         isFemaleSelected = !isFemaleSelected
                 }
             )
-        }
-            .frame(maxWidth: .infinity, alignment: .center)
+        }.frame(maxWidth: .infinity, alignment: .center)
             
-            HeightComponent()
+        HeightComponent(
+                height: height,
+                onHeightChanged: {newHeight in
+                    height = newHeight
+                }
+        )
             
-            HStack{
-                WeightAgeComponent(
-                label: "Weight")
-                WeightAgeComponent(
-                label: "Age")
-            }.frame(maxWidth: .infinity, alignment: .center)
+        HStack{
+            WeightAgeComponent(
+                label: "Weight",
+                value: weight,
+                onValueChanged: { newWeight in
+                    weight = newWeight
+                }
+        )
+            
+            WeightAgeComponent(
+                label: "Age",
+                value: age,
+                onValueChanged:{ newAge in
+                    age = newAge
+                } )
+        }.frame(maxWidth: .infinity, alignment: .center)
 
-            Spacer()
-            ButtonComponent(backgroundColor: .pink, buttonText: "Calculate", clickAction: {
-                print("My first reusable components")
-            }).padding(.bottom, 7)
+        Spacer()
+        ButtonComponent(backgroundColor: .pink, buttonText: "Calculate", clickAction: {
+            // call a method from the shared folder
+            print("My first reusable components")
+        }).padding(.bottom, 7)
 
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)

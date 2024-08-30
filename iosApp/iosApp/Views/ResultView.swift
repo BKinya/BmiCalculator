@@ -3,9 +3,6 @@ import SwiftUI
 struct ResultView : View{
     
     var body: some View{
-        /**
-         TODO: Add a way to get back to the calculator view
-         */
         VStack{
             TitleComponent()
             
@@ -36,6 +33,7 @@ struct ResultView : View{
             )
             Spacer()
             ButtonComponent(backgroundColor: .pink, buttonText: "Re-Calculate", clickAction: {
+                // hide this screen
                 print("My second reusable components")
             }).padding(.bottom, 7)
                 .padding(.top, 12)
