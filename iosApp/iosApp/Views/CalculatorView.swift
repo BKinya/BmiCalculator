@@ -23,7 +23,7 @@ struct CalculatorView: View {
             TitleComponent()
 
             HStack{
-                SexComponent(
+                GenderComponent(
                     isSelected: isMaleSelected,
                     tapAction: {
                         isMaleSelected = !isMaleSelected
@@ -32,7 +32,7 @@ struct CalculatorView: View {
                     }
                 )
                     
-                SexComponent(
+                GenderComponent(
                     isSelected: isFemaleSelected,
                     label: "Female",
                     imageId: "female",

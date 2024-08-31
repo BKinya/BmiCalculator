@@ -1,7 +1,7 @@
 import SwiftUI
 
 
-struct SexComponent: View{
+struct GenderComponent: View{
     var isSelected: Bool = false
 
     
