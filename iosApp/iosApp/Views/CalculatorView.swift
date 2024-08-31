@@ -5,7 +5,7 @@ struct CalculatorView: View {
 
     /**
      TODO:
-     4. Clicking calculate button should call the shared logic
+     4. Clicking calculate button should call the shared logic...
      5. When you get the result show in the result view
      6. Animate showing the result view
      */
@@ -26,8 +26,8 @@ struct CalculatorView: View {
                 GenderComponent(
                     isSelected: isMaleSelected,
                     tapAction: {
-                        isMaleSelected = !isMaleSelected
-                        isFemaleSelected = !isFemaleSelected
+                        isMaleSelected = true
+                        isFemaleSelected = false
                         
                     }
                 )
@@ -37,8 +37,8 @@ struct CalculatorView: View {
                     label: "Female",
                     imageId: "female",
                     tapAction:{
-                        isMaleSelected = !isMaleSelected
-                        isFemaleSelected = !isFemaleSelected
+                        isMaleSelected = false
+                        isFemaleSelected = true
                 }
             )
         }.frame(maxWidth: .infinity, alignment: .center)

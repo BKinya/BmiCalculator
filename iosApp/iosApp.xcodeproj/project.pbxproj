@@ -12,7 +12,7 @@
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		332F1E532C81FBE400B8F987 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332F1E522C81FBE400B8F987 /* ResultView.swift */; };
 		332F1E552C81FCB400B8F987 /* TextComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332F1E542C81FCB400B8F987 /* TextComponent.swift */; };
-		33BB26652C7CA47200991331 /* SexComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BB26642C7CA47200991331 /* SexComponent.swift */; };
+		3337E66A2C83A2D7004406FE /* GenderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3337E6692C83A2D7004406FE /* GenderComponent.swift */; };
 		33BB26672C7CB17700991331 /* HeightComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BB26662C7CB17700991331 /* HeightComponent.swift */; };
 		33BB26692C7CF6BA00991331 /* WeightAgeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BB26682C7CF6BA00991331 /* WeightAgeComponent.swift */; };
 		6153927BE492FF2E2E716AC6 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615391FF2B1482E673DE95C4 /* ButtonComponent.swift */; };
@@ -27,7 +27,7 @@
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
 		332F1E522C81FBE400B8F987 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		332F1E542C81FCB400B8F987 /* TextComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TextComponent.swift; path = iosApp/Components/TextComponent.swift; sourceTree = SOURCE_ROOT; };
-		33BB26642C7CA47200991331 /* SexComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SexComponent.swift; sourceTree = "<group>"; };
+		3337E6692C83A2D7004406FE /* GenderComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderComponent.swift; sourceTree = "<group>"; };
 		33BB26662C7CB17700991331 /* HeightComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightComponent.swift; sourceTree = "<group>"; };
 		33BB26682C7CF6BA00991331 /* WeightAgeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightAgeComponent.swift; sourceTree = "<group>"; };
 		6153919B8DA12A79202315FD /* BoxComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxComponent.swift; sourceTree = "<group>"; };
@@ -79,10 +79,10 @@
 			children = (
 				6153919B8DA12A79202315FD /* BoxComponent.swift */,
 				615391FF2B1482E673DE95C4 /* ButtonComponent.swift */,
-				33BB26642C7CA47200991331 /* SexComponent.swift */,
 				33BB26662C7CB17700991331 /* HeightComponent.swift */,
 				33BB26682C7CF6BA00991331 /* WeightAgeComponent.swift */,
 				332F1E542C81FCB400B8F987 /* TextComponent.swift */,
+				3337E6692C83A2D7004406FE /* GenderComponent.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -235,13 +235,13 @@
 				332F1E532C81FBE400B8F987 /* ResultView.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				7555FF83242A565900829871 /* CalculatorView.swift in Sources */,
-				33BB26652C7CA47200991331 /* SexComponent.swift in Sources */,
 				33BB26692C7CF6BA00991331 /* WeightAgeComponent.swift in Sources */,
 				61539AB882638DFA0FAFA573 /* Colors.swift in Sources */,
 				332F1E552C81FCB400B8F987 /* TextComponent.swift in Sources */,
 				33BB26672C7CB17700991331 /* HeightComponent.swift in Sources */,
 				615394C26EF88547C763068B /* BoxComponent.swift in Sources */,
 				6153927BE492FF2E2E716AC6 /* ButtonComponent.swift in Sources */,
+				3337E66A2C83A2D7004406FE /* GenderComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
