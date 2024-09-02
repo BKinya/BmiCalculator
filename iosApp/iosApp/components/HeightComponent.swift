@@ -6,9 +6,6 @@ struct HeightComponent: View{
     let secondaryTextColor: Color = smokeWhite
     let sliderColor: Color = .pink
     
-  /**
-   create a height variable and provide a call back to update the height
-   */
     
     var height: Float
     var onHeightChanged : (Float) -> Void

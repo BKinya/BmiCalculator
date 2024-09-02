@@ -33,7 +33,6 @@ struct ResultView : View{
             )
             Spacer()
             ButtonComponent(backgroundColor: .pink, buttonText: "Re-Calculate", clickAction: {
-                // hide this screen
                 print("My second reusable components")
             }).padding(.bottom, 7)
                 .padding(.top, 12)

@@ -3,12 +3,7 @@ import Shared
 
 struct CalculatorView: View {
 
-    /**
-     TODO:
-     4. Clicking calculate button should call the shared logic...
-     5. When you get the result show in the result view
-     6. Animate showing the result view
-     */
+    
     @State var isMaleSelected: Bool = true
     @State var isFemaleSelected: Bool = false
     
@@ -69,7 +64,6 @@ struct CalculatorView: View {
 
         Spacer()
         ButtonComponent(backgroundColor: .pink, buttonText: "Calculate", clickAction: {
-            // call a method from the shared folder
             print("My first reusable components")
         }).padding(.bottom, 7)
 
