@@ -74,18 +74,18 @@ fun ParentView(modifier: Modifier = Modifier) {
                     data = data.copy(isFemale = isFemale, isMale = isMale)
                 }
             )
-        }else{
-            ResultView(bmiResult!!)
+        } else {
+            ResultView(bmiResult = bmiResult!!)
         }
         ButtonComponent(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(70.dp),
-            label = if (bmiResult== null)"Calculate" else "Re-Calculate",
+            label = if (bmiResult == null) "Calculate" else "Re-Calculate",
             onClicked = {
-                bmiResult = if (bmiResult != null){
+                bmiResult = if (bmiResult != null) {
                     null
-                }else{
+                } else {
                     calculateBMI(data)
                 }
 
