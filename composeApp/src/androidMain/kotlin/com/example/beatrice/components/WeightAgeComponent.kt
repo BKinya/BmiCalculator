@@ -55,13 +55,13 @@ fun WeightAgeComponent(
                     modifier = Modifier.size(56.dp),
                     iconId = R.drawable.ic_add,
                     onClicked = {
-                        addButtonClicked(value + 5)
+                        addButtonClicked(value)
                     }
                 )
                 CircleButtonComponent(
                     modifier = Modifier.size(56.dp),
                     iconId = R.drawable.ic_remove,
-                    onClicked = {minusButtonClicked(value - 1)}
+                    onClicked = {minusButtonClicked(value)}
                 )
             }
 

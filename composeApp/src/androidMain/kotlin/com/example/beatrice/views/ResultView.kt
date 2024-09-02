@@ -31,109 +31,81 @@ import com.example.beatrice.resources.orange
 
 @Composable
 fun ResultView(
-    modifier: Modifier = Modifier,
     bmiResult: BMIResult
 ) {
-    Column(
-        modifier = modifier
-            .fillMaxSize()
-            .verticalScroll(rememberScrollState())
-            .background(darkNavy),
-        verticalArrangement = Arrangement.SpaceBetween
+    Box(modifier = Modifier.fillMaxWidth()) {
+        BoldTextComponent(
+            text = "Your Result",
+            modifier = Modifier.align(alignment = Alignment.Center)
+        )
+    }
+
+    BoxComponent(
+        backgroundColor = darkBlue40,
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp)
+            .sizeIn(maxHeight = 500.dp)
     ) {
-        Box(
+        Column(
             modifier = Modifier
-                .fillMaxWidth()
-                .padding(top = 32.dp)
+                .fillMaxSize()
+                .padding(32.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.SpaceBetween
         ) {
-            TitleComponent(
-                modifier = Modifier.align(alignment = Alignment.Center)
-            )
-        }
-        Box(modifier = Modifier.fillMaxWidth()) {
-            BoldTextComponent(
-                text = "Your Result",
-                modifier = Modifier.align(alignment = Alignment.Center)
-            )
-        }
-
-        BoxComponent(
-            backgroundColor = darkBlue40,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp)
-                .sizeIn(maxHeight = 500.dp)
-        ) {
-            Column(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(32.dp),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.SpaceBetween
-            ) {
-                val status = bmiResult.status
-                when (status) {
-                    is Status.Underweight -> BoldTextComponent(
-                        textColor = orange,
-                        text = status.value, fontSize = 40.sp
-                    )
-
-                    is Status.Normal -> BoldTextComponent(
-                        textColor = Color.Green,
-                        text = status.value, fontSize = 40.sp
-                    )
-
-                    is Status.Obese -> BoldTextComponent(
-                        textColor = Color.Red,
-                        text = status.value, fontSize = 40.sp
-                    )
-
-                    is Status.Overweight -> BoldTextComponent(
-                        textColor = Color.Yellow,
-                        text = status.value, fontSize = 40.sp
-                    )
-                }
-
-
-                BoldTextComponent(
-                    text = String.format("%.1f", bmiResult.bmi),
-                    fontSize = 77.sp
+            val status = bmiResult.status
+            when (status) {
+                is Status.Underweight -> BoldTextComponent(
+                    textColor = orange,
+                    text = status.value, fontSize = 40.sp
                 )
 
-                when (status) {
-                    is Status.Underweight -> RegularTextComponent(
-                        text = status.message,
-                        fontSize = 27.sp
-                    )
+                is Status.Normal -> BoldTextComponent(
+                    textColor = Color.Green,
+                    text = status.value, fontSize = 40.sp
+                )
 
-                    is Status.Normal -> RegularTextComponent(
-                        text = status.message,
-                        fontSize = 27.sp
-                    )
+                is Status.Obese -> BoldTextComponent(
+                    textColor = Color.Red,
+                    text = status.value, fontSize = 40.sp
+                )
 
-                    is Status.Overweight -> RegularTextComponent(
-                        text = status.message,
-                        fontSize = 27.sp
-                    )
+                is Status.Overweight -> BoldTextComponent(
+                    textColor = Color.Yellow,
+                    text = status.value, fontSize = 40.sp
+                )
+            }
 
-                    is Status.Obese -> RegularTextComponent(
-                        text = status.message,
-                        fontSize = 27.sp
-                    )
 
-                }
+            BoldTextComponent(
+                text = String.format("%.1f", bmiResult.bmi),
+                fontSize = 77.sp
+            )
+
+            when (status) {
+                is Status.Underweight -> RegularTextComponent(
+                    text = status.message,
+                    fontSize = 27.sp
+                )
+
+                is Status.Normal -> RegularTextComponent(
+                    text = status.message,
+                    fontSize = 27.sp
+                )
+
+                is Status.Overweight -> RegularTextComponent(
+                    text = status.message,
+                    fontSize = 27.sp
+                )
+
+                is Status.Obese -> RegularTextComponent(
+                    text = status.message,
+                    fontSize = 27.sp
+                )
 
             }
+
         }
-
-        ButtonComponent(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(71.dp),
-            label = "Re-Calculate",
-            onClicked = {
-
-            }
-        )
     }
 }

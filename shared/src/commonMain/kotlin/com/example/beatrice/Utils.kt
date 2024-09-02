@@ -24,7 +24,8 @@ data class BMIResult(
 )
 
 fun calculateBMI(data: UserData): BMIResult {
-    val bmi = data.weight.toDouble() / (data.height * data.height)
+    val heightInMeters = data.height/100
+    val bmi = data.weight.toDouble() / (heightInMeters * heightInMeters)
 
   return  if (bmi <= 18.4) {
         BMIResult(
